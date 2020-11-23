@@ -63,6 +63,6 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "@awema-pl/utilities": "^1.0.0"
+        "awema-pl-front-module-utilities": "^1.0.0"
     }
 }

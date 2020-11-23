@@ -1,10 +1,10 @@
 /**
  * Bundle of AWEMA @awema-pl/module-modal-window
- * Generated: 2019-07-22 14:05:34
+ * Generated: 2020-11-23 15:24:08
  * Version: 1.1.3
  */
 
-'use strict';Object.defineProperty(exports,'__esModule',{value:true});function _defineProperty(obj, key, value) {
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});function _interopDefault(e){return(e&&(typeof e==='object')&&'default'in e)?e['default']:e}var routerUtils=_interopDefault(require('@awema-pl/utilities/resources/vue/router-utils'));function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
       value: value,
@@ -19,20 +19,35 @@
   return obj;
 }
 
-function _objectSpread(target) {
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread2(target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i] != null ? arguments[i] : {};
-    var ownKeys = Object.keys(source);
 
-    if (typeof Object.getOwnPropertySymbols === 'function') {
-      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-      }));
+    if (i % 2) {
+      ownKeys(Object(source), true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(Object(source)).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
     }
-
-    ownKeys.forEach(function (key) {
-      _defineProperty(target, key, source[key]);
-    });
   }
 
   return target;
@@ -122,26 +137,6 @@ function isObject(val) {
   return val != null && typeof val === 'object';
 }
 /**
- * Detects if the value is empty
- * returns true if the value is `undefined`, `null`, `false`, `''`, `0`, `[]` or `{}`
- *
- * @param {Any} val - value to check
- *
- * @returns {Boolean} - is the value empty
- */
-
-function isEmpty(val) {
-  if (!val) {
-    return true;
-  } else if (typeof val !== 'function' && val.hasOwnProperty('length') && typeof val.length === 'number') {
-    return !val.length;
-  } else if (typeof val === 'object') {
-    return !Object.keys(val).length;
-  }
-
-  return false;
-}
-/**
  * Creates an array by splitting given path to object's value
  *
  * @param {String} path - Path to value in object
@@ -190,41 +185,16 @@ function get(obj, path, defaultValue) {
   }
 
   return typeof value !== 'undefined' ? value : defaultValue;
-}
-/**
- * Applies a function to every nested object in given object
- * and passes value, key and object itself
- * 
- * @param  {Array, Object}   obj - given object
- * @param  {Function}        fn  - function to apply
- * 
- * @return {Array, Object}   mutated object
- */
-
-function forEach(obj, fn) {
-  if (!isObject(obj)) return;
-  let keys = Object.keys(obj);
-
-  for (let i = 0; i < keys.length; i++) {
-    let key = keys[i];
-    let val = obj[key];
-
-    if (isObject(val)) {
-      forEach(val, fn);
-    } else {
-      fn.call(null, obj[key], key, obj);
-    }
-  }
-
-  return obj;
 }var langMixin = {
   props: {
     lang: Object
   },
   computed: {
+    // TODO: fix objects merging (replace ???)
+    // TODO: write test for external lang prop
     '$lang': function () {
-      return { ...this.lang,
-        ...get(this.$options, '_config.lang', {})
+      return { ...get(this.$options, '_config.lang', {}),
+        ...this.lang
       };
     }
   }
@@ -477,7 +447,7 @@ var __vue_staticRenderFns__ = [];
   /* scoped */
   const __vue_scope_id__ = undefined;
   /* module identifier */
-  const __vue_module_identifier__ = "data-v-5c7bcfa0";
+  const __vue_module_identifier__ = "data-v-69a17da7";
   /* functional template */
   const __vue_is_functional_template__ = false;
   /* style inject */
@@ -502,58 +472,15 @@ var __vue_staticRenderFns__ = [];
     MODAL_BACK: "Go back",
     MODAL_CLOSE: "Close modal (ESC)"
   }
-};/**
- * Modifies VueRouter current GET-params and pushes next route
- * applied to VueRouter.prototype
- * 
- * @param {Object} queryObj - params object. If param is set to `null`, 
- *                           `undefined`, or empty `String`,
- *                          it will be deleted from query.
- *                          To set param=null, pass a string `'null'`
- * @param {Boolean} push - true to use history.pushState,
- *                         false to use history.replaceState
- *
- * @return {Object<VueRouter>} - AWEMA._vueRouter - global Vue router instance
- */
-
-function setParam(queryObj, push = true) {
-  // do nothing if nothing passed
-  if (isEmpty(queryObj)) return; // shallow copy next route is enough for reactivity
-
-  let next = Object.assign({}, this.currentRoute); // shallow copy route query
-
-  let query = Object.assign({}, this.currentRoute.query); // merge queries
-
-  Object.assign(query, queryObj); // remove null values
-
-  query = forEach(query, function (val, key, obj) {
-    if (typeof val === 'undefined' || val === '' || val === null) {
-      delete obj[key];
-    }
-  }); // set query and push route
-
-  next.query = query;
-  this[push ? 'push' : 'replace'](next);
-  return this;
-}
-/**
- * Component mixin - extends default $router functional
- */
-
-const routerMixin = {
-  beforeCreate() {
-    this.$router.$setParam = setParam;
-  }
-
 };function install(Vue, options) {
   // check if already installed
   if (this.installed) return;
   this.installed = true; // apply utils
 
   modalWindow.mixins = modalWindow.mixins || [];
-  modalWindow.mixins.push(routerMixin); // merge configs
+  modalWindow.mixins.push(routerUtils); // merge configs
 
-  var _config = _objectSpread({}, config, options); // create Event Bus
+  var _config = _objectSpread2(_objectSpread2({}, config), options); // create Event Bus
 
 
   if (!_config.eventBus) {
@@ -575,9 +502,9 @@ const routerMixin = {
   Vue.component('modal-window', modalWindow);
 }
 var plugin = {
-  install: install // auto install
+  install: install
+}; // auto install
 
-};
 var GlobalVue = null;
 var GlobalVueRouter = null;
 

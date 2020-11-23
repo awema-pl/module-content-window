@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import langMixin from '@awema-pl/utilities/resources/vue/i18n-utils'
+import langMixin from 'awema-pl-front-module-utilities/resources/vue/mixins/i18n-utils'
 
 let _uniqModalId = 0;
 

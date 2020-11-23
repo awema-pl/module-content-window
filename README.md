@@ -22,7 +22,7 @@ Production build `npm run build`
 Via Composer
 
 ``` bash
-$ composer require awema-pl/module-modal-window
+$ composer require awema-pl/module-modal
 ```
 
 The package will automatically register itself.
