@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modal example</title>
+    <script>
+        const AWEMA_CONFIG = {
+            key: '5cd207e2c94eb723c3307764a5693def',
+            dev: true
+        }
+    </script>
+    <!-- modals -->
+    <!-- <link rel="stylesheet" href="css/main.css"></link> -->
+    <link href="https://cdn.awema.pl/5cd207e2c94eb723c3307764a5693def/awema-pl/indigo-layout/v1.x.x/css/main.css" rel="stylesheet">
+    <script src="js/main.js"></script>
+
+    <!-- table-builder -->
+    <script src="https://cdn.awema.pl/5cd207e2c94eb723c3307764a5693def/awema-pl/table-builder/v1.x.x/js/main.js"></script>
+
+    <!-- core -->
+    <script src="https://cdn.awema.pl/5cd207e2c94eb723c3307764a5693def/awema-pl/base-js/v1.x.x/js/main.js"></script>
+</head>
+<body>
+    <div class="mainwrapper">
+
+        <button class="btn" onclick="AWEMA.emit('modal::ajax:open')">AJAX modal</button>
+    
+
+        <!-- modals -->
+        <div class="modals">
+            <modal-window name="ajax" title="AJAX modal" :bg-click-close="false">
+                <content-wrapper url="https://jsonplaceholder.typicode.com/users">
+
+                    <template slot="loading">
+                        <div class="h1 text-center">Loading...</div>
+                    </template>
+
+                    <template slot-scope="ajaxData">
+                        <table-builder :default="ajaxData.data">
+                            <tb-column name="name"></tb-column>
+                            <tb-column name="email">
+                                <template slot-scope="col">
+                                    <a :href="`mailto:${col.data.email}`">{{ col.data.email }}</a>
+                                </template>
+                            </tb-column>
+                        </table-builder>
+                    </template>
+                    
+                </content-wrapper>
+            </modal-window>
+        </div>
+
+    </div>
+</body>
+</html>

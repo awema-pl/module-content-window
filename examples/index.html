@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modal example</title>
+    <script>
+        const AWEMA_CONFIG = {
+            key: '5cd207e2c94eb723c3307764a5693def',
+            dev: true
+        }
+    </script>
+    <!-- modals -->
+    <link rel="stylesheet" href="css/main.css"></link>
+    <!-- <link href="https://cdn.awema.pl/5cd207e2c94eb723c3307764a5693def/awema-pl/indigo-layout/v1.x.x/css/main.css" rel="stylesheet"> -->
+    <script src="js/main.js"></script>
+    <!-- core -->
+    <script src="https://cdn.awema.pl/5cd207e2c94eb723c3307764a5693def/awema-pl/base-js/v1.x.x/js/main.js"></script>
+</head>
+<body>
+    <content-wrapper class="mainwrapper">
+        <button class="btn" @click="AWEMA.emit('modal::simple:open')">Default modal</button>
+        <button class="btn" @click="AWEMA.emit('modal::fullscreen:open')">Fullscreen modal</button>
+        <button class="btn" @click="AWEMA.emit('modal::no-title:open')">Aside modal</button>
+        <button class="btn" @click="AWEMA.emit('modal::aside-large:open')">Large aside modal</button>
+        <button class="btn" @click="AWEMA.emit('modal::aside-medium:open')">Medium aside modal</button>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</p>
+        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</p>
+        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</p>
+    </content-wrapper>
+        
+    <div class="modals">
+    
+        <modal-window name="simple" title="Default">
+            Default modal
+        </modal-window>
+    
+        <modal-window name="fullscreen" title="Fullscreen modal" theme="fullscreen">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.
+        </modal-window>
+    
+        <modal-window name="no-title" param="aside" theme="aside">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</p>
+        </modal-window>
+    
+        <modal-window name="aside-large" param="aside" title="Aside large" theme="aside-large">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.
+        </modal-window>
+    
+        <modal-window name="aside-medium" param="aside" title="Aside medium" theme="aside-medium">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dolor eum ad facere quam vel, quod, ea officia, accusamus similique veniam perferendis? Consectetur nesciunt odit minima provident mollitia reiciendis eum.</p>
+        </modal-window>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modal example</title>
+    <script>
+        const AWEMA_CONFIG = {
+            key: '5cd207e2c94eb723c3307764a5693def'
+        }
+    </script>
+
+    <link rel="stylesheet"
+        href="https://cdn.awema.pl/5cd207e2c94eb723c3307764a5693def/awema-pl/indigo-layout/v1.x.x/css/main.css">
+    <!-- modals -->
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <script src="js/main.js"></script>
+
+    <!-- form-builder -->
+    <!-- <link rel="stylesheet" href="https://storage.awema.pl/680a7d07f89b94e7fc83be657a2daa27/awema-pl/form-builder/v1.x.x/css/main.css"> -->
+    <script src="https://cdn.awema.pl/5cd207e2c94eb723c3307764a5693def/awema-pl/form-builder/v1.x.x/js/main.js"></script>
+
+    <!-- core -->
+    <script src="https://cdn.awema.pl/5cd207e2c94eb723c3307764a5693def/awema-pl/base-js/v1.x.x/js/main.js"></script>
+</head>
+
+<body>
+    <content-wrapper>
+        <modal-window name="intro" theme="fullscreen">
+            <p><img src="https://placeimg.com/560/320/tech" alt="Welcome"></p>
+            <h2>Welcome!</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, consectetur pariatur modi eligendi cum sapiente quaerat hic at est libero?</p>
+            <p>Asperiores veritatis ratione debitis nisi atque cupiditate deserunt. Qui distinctio odit ut quasi magni impedit veritatis dolor tenetur est nesciunt.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, consectetur pariatur modi eligendi cum sapiente quaerat hic at est libero?</p>
+            <p>Asperiores veritatis ratione debitis nisi atque cupiditate deserunt. Qui distinctio odit ut quasi magni impedit veritatis dolor tenetur est nesciunt.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, consectetur pariatur modi eligendi cum sapiente quaerat hic at est libero?</p>
+            <p>Asperiores veritatis ratione debitis nisi atque cupiditate deserunt. Qui distinctio odit ut quasi magni impedit veritatis dolor tenetur est nesciunt.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, consectetur pariatur modi eligendi cum sapiente quaerat hic at est libero?</p>
+            <p>Asperiores veritatis ratione debitis nisi atque cupiditate deserunt. Qui distinctio odit ut quasi magni impedit veritatis dolor tenetur est nesciunt.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, consectetur pariatur modi eligendi cum sapiente quaerat hic at est libero?</p>
+            <p>Asperiores veritatis ratione debitis nisi atque cupiditate deserunt. Qui distinctio odit ut quasi magni impedit veritatis dolor tenetur est nesciunt.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, consectetur pariatur modi eligendi cum sapiente quaerat hic at est libero?</p>
+            <p>Asperiores veritatis ratione debitis nisi atque cupiditate deserunt. Qui distinctio odit ut quasi magni impedit veritatis dolor tenetur est nesciunt.</p>
+            <p>Asperiores veritatis ratione debitis nisi atque cupiditate deserunt. Qui distinctio odit ut quasi magni impedit veritatis dolor tenetur est nesciunt.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, consectetur pariatur modi eligendi cum sapiente quaerat hic at est libero?</p>
+            <p>Asperiores veritatis ratione debitis nisi atque cupiditate deserunt. Qui distinctio odit ut quasi magni impedit veritatis dolor tenetur est nesciunt.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, consectetur pariatur modi eligendi cum sapiente quaerat hic at est libero?</p>
+            <p>Asperiores veritatis ratione debitis nisi atque cupiditate deserunt. Qui distinctio odit ut quasi magni impedit veritatis dolor tenetur est nesciunt.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, consectetur pariatur modi eligendi cum sapiente quaerat hic at est libero?</p>
+            <p>Asperiores veritatis ratione debitis nisi atque cupiditate deserunt. Qui distinctio odit ut quasi magni impedit veritatis dolor tenetur est nesciunt.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, consectetur pariatur modi eligendi cum sapiente quaerat hic at est libero?</p>
+            <p>Asperiores veritatis ratione debitis nisi atque cupiditate deserunt. Qui distinctio odit ut quasi magni impedit veritatis dolor tenetur est nesciunt.</p>
+            <form-builder
+                url="//httpbin.org/post" disabled-dialog auto-submit
+                @sended="AWEMA.notify({status: 'success', message: 'Intro is disabled'}); AWEMA.emit('modal::intro.close')">
+                <fb-checkbox name="disable_intro" label="Do not show this info anymore"></fb-checkbox>
+            </form-builder>
+        </modal-window>
+        <button class="btn" onclick="AWEMA.emit('modal::intro:open')">Content modal</button>
+    </content-wrapper>
+</body>
+
+</html>

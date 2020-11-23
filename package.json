@@ -1,0 +1,68 @@
+{
+    "name": "@awema-pl/module-modal-window",
+    "version": "1.1.3",
+    "description": "Modal window with history navigtion. Includes default, full-screen and aside layouts.",
+    "main": "dist/js/modal-window.ssr.js",
+    "module": "dist/js/modal-window.esm.js",
+    "unpkg": "dist/js/modal-window.min.js",
+    "browser": {
+        "./sfc": "resources/vue/modal-window.vue"
+    },
+    "scripts": {
+        "start": "npm run watch",
+        "watch": "cross-env NODE_ENV=development BROWSERSLIST_ENV=modern gulp",
+        "watch:legacy": "cross-env NODE_ENV=development BROWSERSLIST_ENV=legacy gulp",
+        "build": "npm run build:modern && npm run build:legacy && npm run build:plugin",
+        "build:modern": "cross-env NODE_ENV=production cross-env BROWSERSLIST_ENV=modern gulp",
+        "build:legacy": "cross-env NODE_ENV=production cross-env BROWSERSLIST_ENV=legacy rollup -c",
+        "build:plugin": "cross-env NODE_ENV=production rollup -c rollup.plugin.config.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@gitlab.awema.pl:awema-pl/modal.git"
+    },
+    "keywords": [
+        "modal"
+    ],
+    "files": [
+        "dist/*",
+        "resources/vue/*",
+        "resources/css/*"
+    ],
+    "author": "AwemaCode (https://www.awema.de/)",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.2.2",
+        "@babel/preset-env": "^7.3.1",
+        "autoprefixer": "^9.4.6",
+        "browser-sync": "^2.26.3",
+        "core-js": "^2.6.3",
+        "cross-env": "^5.2.0",
+        "css-mqpacker": "^7.0.0",
+        "cssnano": "^4.1.7",
+        "gulp": "^4.0.0",
+        "gulp-clean": "^0.4.0",
+        "gulp-noop": "^1.0.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-postcss": "^8.0.0",
+        "gulp-rollup": "^2.16.2",
+        "gulp-sourcemaps": "^2.6.4",
+        "gulp-stylus": "^2.7.0",
+        "postcss-import": "^12.0.1",
+        "rollup": "^0.68.2",
+        "rollup-plugin-babel": "^4.3.2",
+        "rollup-plugin-commonjs": "^9.2.0",
+        "rollup-plugin-includepaths": "^0.2.3",
+        "rollup-plugin-json": "^3.1.0",
+        "rollup-plugin-license": "^0.7.0",
+        "rollup-plugin-node-resolve": "^4.0.0",
+        "rollup-plugin-postcss": "^1.6.3",
+        "rollup-plugin-terser": "^4.0.2",
+        "rollup-plugin-vue": "^4.3.2",
+        "stylus": "^0.54.5",
+        "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "@awema-pl/utilities": "^1.0.0"
+    }
+}
