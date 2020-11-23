@@ -1,8 +1,8 @@
-# The &lt;modal-window&gt; Component
+# The &lt;content-window&gt; Component
 
 It is a modal window component with a tracked history. Below you will see a visual presentation of the modal window component.
 
-![modal-window](/assets/awema-pl/modal-window/img/docs/modal.gif)
+![content-window](/assets/awema-pl/content-window/img/docs/modal.gif)
 
 
 <h2 id="mw-example">Example of using the component</h2>
@@ -12,28 +12,28 @@ It is a modal window component with a tracked history. Below you will see a visu
 ```javascript
 import Vue from 'vue'
 import VueRouter from 'vue-router' // required
-import modalWindow from '@awema-pl/module-modal-window'
-import '@awema-pl/module-modal-window/dist/main.css' // optionally, for default styling
+import contentWindow from '@awema-pl/module-content-window'
+import '@awema-pl/module-content-window/dist/main.css' // optionally, for default styling
 
 Vue.use(VueRouter) // required
-Vue.use(modalWindow, { /* optional config */}) // registers `<modal-window>` component globally
+Vue.use(contentWindow, { /* optional config */}) // registers `<content-window>` component globally
 ```
 
 ### For AwemaDotIo
 include CDN-script, provided by the [platform](//awema.pl)
 
 ```html
-<modal-window ref="modal">
+<content-window ref="modal">
     Text in the modal window
-</modal-window>
+</content-window>
 
 <!-- direct call of method for opening a modal window (not recommended) -->
 <button @click="$refs.modal.open()">Open a window</button>
 
 
-<modal-window name="my-modal">
+<content-window name="my-modal">
     Text in the modal window
-</modal-window>
+</content-window>
 
 <!-- emit the opening method in Event Bus (preferred method) -->
 <button @click="$modals.$emit('modal::my-modal:open')">Open another window</button>
@@ -65,7 +65,7 @@ const AWEMA_CONFIG = {
 
     // some other config...
 
-    modalWindow: {
+    contentWindow: {
         stay: true,
         bgClickClose: false,
         // ... other options
@@ -136,10 +136,10 @@ If you use your own Event Bus, pass it to config, during initialization. This wi
 
 ```javascript
 import Vue from 'vue'
-import modalWindow from '@awema-pl/module-modal-window'
+import contentWindow from '@awema-pl/module-content-window'
 import { EventBus } from 'path-to-your-event-bus'
 
-Vue.use(modalWindow, {
+Vue.use(contentWindow, {
     eventBus: EventBus
 })
 ```
@@ -153,7 +153,7 @@ To change captions for the "Close" and "Back" buttons of the modal window, you s
 ```javascript
 const AWEMA_CONFIG = {
     key: 'your_api_key',
-    modalWindow: {
+    contentWindow: {
         // defaults
         lang: {
             MODAL_BACK: "Go back",
@@ -167,9 +167,9 @@ For standalone usage, default config is provided during plugin initialization
 
 ```javascript
 import Vue from 'vue'
-import modalWindow from '@awema-pl/module-modal-window'
+import contentWindow from '@awema-pl/module-content-window'
 
-Vue.use(modalWindow, {
+Vue.use(contentWindow, {
     lang: {
         MODAL_BACK: "Back",
         MODAL_CLOSE: "Close a modal window"
@@ -214,7 +214,7 @@ To show dynamically loading content, place a `&lt;content-wrapper/&gt;` componen
 > But if you use modal with `stay` prop turned on - content will be loaded **once**, after the page load
 
 ```html
-<modal-window name="ajax-example" title="AJAX modal">
+<content-window name="ajax-example" title="AJAX modal">
 
     <!-- dynamic content -->
     <content-wrapper url="https://jsonplaceholder.typicode.com/users">
@@ -237,12 +237,12 @@ To show dynamically loading content, place a `&lt;content-wrapper/&gt;` componen
         </template><!-- / content -->
 
     </content-wrapper>
-</modal-window>
+</content-window>
 ```
 
 <div class="vue-example">
     <button class="btn" @click="AWEMA.emit('modal::ajax-example:open')">AJAX modal</button>
-    <modal-window name="ajax-example" title="AJAX modal">
+    <content-window name="ajax-example" title="AJAX modal">
         <content-wrapper url="https://jsonplaceholder.typicode.com/users">
             <template slot="loading">
                 <div class="h1 text-center">Loading...</div>
@@ -258,5 +258,5 @@ To show dynamically loading content, place a `&lt;content-wrapper/&gt;` componen
                 </table-builder>
             </template>
         </content-wrapper>
-    </modal-window>
+    </content-window>
 </div>

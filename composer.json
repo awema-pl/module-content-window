@@ -1,5 +1,5 @@
 {
-    "name": "awema-pl/module-modal-window",
+    "name": "awema-pl/module-content-window",
     "description": "Module modal window.",
     "type": "library",
     "license": "MIT",
@@ -7,29 +7,29 @@
         {
             "name": "Karol Golec",
             "email": "karolgolec10@gmail.com",
-            "homepage": "https://github.pl/awema-pl/module-modal-window",
+            "homepage": "https://github.pl/awema-pl/module-content-window",
             "role": "Developer"
         }
     ],
     "support": {
         "email": "karolgolec10@gmail.com"
     },
-    "homepage": "https://github.com/awema-pl/module-modal-window",
+    "homepage": "https://github.com/awema-pl/module-content-window",
     "keywords": [
         "Laravel",
-        "ModalWindow"
+        "ContentWindow"
     ],
     "require": {
         "illuminate/support": "~5|~6|~7|~8|~9"
     },
     "autoload": {
         "psr-4": {
-            "AwemaPL\\ModalWindow\\": "src/"
+            "AwemaPL\\ContentWindow\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "AwemaPL\\ModalWindow\\Tests\\": "tests/"
+            "AwemaPL\\ContentWindow\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -38,7 +38,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "AwemaPL\\ModalWindow\\ModalWindowServiceProvider"
+                "AwemaPL\\ContentWindow\\ContentWindowServiceProvider"
             ]
         }
     },

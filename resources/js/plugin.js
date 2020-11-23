@@ -1,4 +1,4 @@
-import modalWindow from '../vue/modal-window.vue'
+import contentWindow from '../vue/content-window.vue'
 import config from './config'
 import routerUtils from '@awema-pl/utilities/resources/vue/router-utils'
 
@@ -9,8 +9,8 @@ export function install(Vue, options) {
     this.installed = true
 
     // apply utils
-    modalWindow.mixins = modalWindow.mixins || []
-    modalWindow.mixins.push(routerUtils)
+    contentWindow.mixins = contentWindow.mixins || []
+    contentWindow.mixins.push(routerUtils)
 
     // merge configs
     let _config = { ...config, ...options }
@@ -31,9 +31,9 @@ export function install(Vue, options) {
         Vue.prototype.$modals = eventBus
     }
 
-    modalWindow._config = _config
+    contentWindow._config = _config
 
-    Vue.component('modal-window', modalWindow)
+    Vue.component('content-window', contentWindow)
 }
 
 
@@ -59,6 +59,6 @@ if ( GlobalVue && GlobalVueRouter ) {
 }
 
 
-modalWindow.install = install
+contentWindow.install = install
 
-export default modalWindow;
+export default contentWindow;

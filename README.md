@@ -1,4 +1,4 @@
-# ModalWindow
+# ContentWindow
 
 [![Composer Ready](https://www.awema.pl/awemapl/modalwindow/status.svg)](https://www.awema.pl/)
 [![Downloads](https://www.awema.pl/awemapl/modalwindow/downloads.svg)](https://www.awema.pl/)
@@ -22,7 +22,7 @@ Production build `npm run build`
 Via Composer
 
 ``` bash
-$ composer require awema-pl/module-modal
+$ composer require awema-pl/module-content-window
 ```
 
 The package will automatically register itself.
@@ -30,10 +30,10 @@ The package will automatically register itself.
 You can publish the migration with:
 
 ```bash
-php artisan vendor:publish --provider="AwemaPL\ModalWindow\Providers\ModalWindowServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="AwemaPL\ContentWindow\Providers\ContentWindowServiceProvider" --tag="migrations"
 ```
 
-After the migration has been published you can create the table for ModalWindow by running the migrations:
+After the migration has been published you can create the table for ContentWindow by running the migrations:
 
 ```bash
 php artisan migrate
@@ -42,7 +42,7 @@ php artisan migrate
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --provider="AwemaPL\ModalWindow\Providers\ModalWindowServiceProvider" --tag="config"
+php artisan vendor:publish --provider="AwemaPL\ContentWindow\Providers\ContentWindowServiceProvider" --tag="config"
 ```
 
 ## Contributing

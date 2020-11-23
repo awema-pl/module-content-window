@@ -1,12 +1,12 @@
 {
-    "name": "@awema-pl/module-modal-window",
+    "name": "@awema-pl/module-content-window",
     "version": "1.1.3",
     "description": "Modal window with history navigtion. Includes default, full-screen and aside layouts.",
-    "main": "dist/js/modal-window.ssr.js",
-    "module": "dist/js/modal-window.esm.js",
-    "unpkg": "dist/js/modal-window.min.js",
+    "main": "dist/js/content-window.ssr.js",
+    "module": "dist/js/content-window.esm.js",
+    "unpkg": "dist/js/content-window.min.js",
     "browser": {
-        "./sfc": "resources/vue/modal-window.vue"
+        "./sfc": "resources/vue/content-window.vue"
     },
     "scripts": {
         "start": "npm run watch",

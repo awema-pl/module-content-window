@@ -91,7 +91,7 @@ function getStopper() {
 
 export default {
 
-    name: 'modal-window',
+    name: 'content-window',
 
     mixins: [ langMixin ],
 

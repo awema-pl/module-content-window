@@ -1,23 +1,23 @@
 <?php
 
-namespace AwemaPL\ModalWindow;
+namespace AwemaPL\ContentWindow;
 
 use AwemaPL\BaseJS\AwemaProvider;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 
-class ModalWindowServiceProvider extends AwemaProvider
+class ContentWindowServiceProvider extends AwemaProvider
 {
 
     public function boot()
     {
-        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'modal-window');
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'content-window');
 
         parent::boot();
     }
     
     public function getPackageName(): string
     {
-        return 'modal-window';
+        return 'content-window';
     }
 
     public function getPath(): string

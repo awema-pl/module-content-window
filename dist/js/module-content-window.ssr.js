@@ -1,6 +1,6 @@
 /**
- * Bundle of AWEMA @awema-pl/module-modal-window
- * Generated: 2020-11-23 15:24:08
+ * Bundle of AWEMA @awema-pl/module-content-window
+ * Generated: 2020-11-23 15:41:54
  * Version: 1.1.3
  */
 
@@ -210,7 +210,7 @@ function getStopper() {
 }
 
 var script = {
-  name: 'modal-window',
+  name: 'content-window',
   mixins: [langMixin],
   props: {
     title: String,
@@ -447,7 +447,7 @@ var __vue_staticRenderFns__ = [];
   /* scoped */
   const __vue_scope_id__ = undefined;
   /* module identifier */
-  const __vue_module_identifier__ = "data-v-69a17da7";
+  const __vue_module_identifier__ = "data-v-51c68b4f";
   /* functional template */
   const __vue_is_functional_template__ = false;
   /* style inject */
@@ -456,7 +456,7 @@ var __vue_staticRenderFns__ = [];
   
 
   
-  var modalWindow = normalizeComponent_1(
+  var contentWindow = normalizeComponent_1(
     { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
     __vue_inject_styles__,
     __vue_script__,
@@ -477,8 +477,8 @@ var __vue_staticRenderFns__ = [];
   if (this.installed) return;
   this.installed = true; // apply utils
 
-  modalWindow.mixins = modalWindow.mixins || [];
-  modalWindow.mixins.push(routerUtils); // merge configs
+  contentWindow.mixins = contentWindow.mixins || [];
+  contentWindow.mixins.push(routerUtils); // merge configs
 
   var _config = _objectSpread2(_objectSpread2({}, config), options); // create Event Bus
 
@@ -498,8 +498,8 @@ var __vue_staticRenderFns__ = [];
     Vue.prototype.$modals = eventBus;
   }
 
-  modalWindow._config = _config;
-  Vue.component('modal-window', modalWindow);
+  contentWindow._config = _config;
+  Vue.component('content-window', contentWindow);
 }
 var plugin = {
   install: install
@@ -520,4 +520,4 @@ if (GlobalVue && GlobalVueRouter) {
   GlobalVue.use(plugin);
 }
 
-modalWindow.install = install;exports.install=install;exports.default=modalWindow;
+contentWindow.install = install;exports.install=install;exports.default=contentWindow;
