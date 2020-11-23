@@ -1,6 +1,6 @@
 {
     "name": "awema-pl/module-modal-window",
-    "description": ":description",
+    "description": "Module modla window.",
     "type": "library",
     "license": "MIT",
     "authors": [
