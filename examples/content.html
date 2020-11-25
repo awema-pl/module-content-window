@@ -28,7 +28,7 @@
 
 <body>
     <content-wrapper>
-        <content-window name="intro" theme="fullscreen">
+        <modal-window name="intro" theme="fullscreen">
             <p><img src="https://placeimg.com/560/320/tech" alt="Welcome"></p>
             <h2>Welcome!</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, consectetur pariatur modi eligendi cum sapiente quaerat hic at est libero?</p>
@@ -57,7 +57,7 @@
                 @sended="AWEMA.notify({status: 'success', message: 'Intro is disabled'}); AWEMA.emit('modal::intro.close')">
                 <fb-checkbox name="disable_intro" label="Do not show this info anymore"></fb-checkbox>
             </form-builder>
-        </content-window>
+        </modal-window>
         <button class="btn" onclick="AWEMA.emit('modal::intro:open')">Content modal</button>
     </content-wrapper>
 </body>

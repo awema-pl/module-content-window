@@ -9,7 +9,7 @@ const postcss = require('rollup-plugin-postcss')
 const _ = require('lodash')
 
 name = name.replace('@awema-pl/', '')
-const namePascal = _.upperFirst(_.camelCase('content-window'))
+const namePascal = _.upperFirst(_.camelCase('modal-window'))
 
 const external = ['vue', 'vue-router']
 

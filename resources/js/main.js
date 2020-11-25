@@ -1,4 +1,4 @@
-import contentWindow from '../vue/content-window.vue'
+import modalWindow from '../vue/modal-window.vue'
 import config from './config'
 
 const STACK = '__awema_plugins_stack__'
@@ -13,14 +13,14 @@ const awemaPlugin = {
                 $off: AWEMA.off,
                 $emit: AWEMA.emit
             },
-            ...AWEMA_CONFIG.contentWindow
+            ...AWEMA_CONFIG.modalWindow
         })
 
-        contentWindow._config = _config
+        modalWindow._config = _config
 
-        Vue.component('content-window', contentWindow)
+        Vue.component('modal-window', modalWindow)
 
-        AWEMA._watchedNames.push('content-window')
+        AWEMA._watchedNames.push('modal-window')
     }
 }
 

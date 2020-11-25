@@ -35,7 +35,7 @@ npm manifest:
       "module": "dist/js/modal.esm.js",
       "unpkg": "dist/js/modal.min.js",
       "browser": {
-          "./sfc": "resources/vue/content-window.vue"
+          "./sfc": "resources/vue/modal-window.vue"
       },
       "scripts": {
           "start": "npm run watch",
