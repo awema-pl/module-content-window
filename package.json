@@ -1,6 +1,6 @@
 {
     "name": "@awema-pl/module-modal-window",
-    "version": "1.1.3",
+    "version": "1.0.0",
     "description": "Modal window with history navigtion. Includes default, full-screen and aside layouts.",
     "main": "dist/js/modal-window.ssr.js",
     "module": "dist/js/modal-window.esm.js",
