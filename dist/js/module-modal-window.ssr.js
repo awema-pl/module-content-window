@@ -1,7 +1,7 @@
 /**
  * Bundle of AWEMA @awema-pl/module-modal-window
- * Generated: 2020-11-25 23:26:37
- * Version: 1.1.3
+ * Generated: 2021-01-23 12:29:38
+ * Version: 1.0.0
  */
 
 'use strict';Object.defineProperty(exports,'__esModule',{value:true});function _interopDefault(e){return(e&&(typeof e==='object')&&'default'in e)?e['default']:e}var routerUtils=_interopDefault(require('@awema-pl/utilities/resources/vue/router-utils'));function _defineProperty(obj, key, value) {
